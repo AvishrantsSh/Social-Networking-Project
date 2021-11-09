@@ -1,34 +1,34 @@
 <p align="center">
-  <a href="https://github.com/AvishrantsSh/Django-Template">
+  <!-- <a href="https://github.com/AvishrantsSh/Social-Networking-Project">
     <img src="assets/logo.png" alt="Logo" width="480">
-  </a>
+  </a> -->
 
-  <h2 align="center">Django Template</h2>
+  <h2 align="center">Social Networking</h2>
 
   <p align="center">
-    An awesome way to kickstart your Django projects!
+    An application that allows users to create a profile, post messages, and follow other users.
     <br>
-    <a href="https://github.com/AvishrantsSh/Django-Template/issues">Report Bug</a>
+    <a href="https://github.com/AvishrantsSh/Social-Networking-Project/issues">Report Bug</a>
     ·
-    <a href="https://github.com/AvishrantsSh/Django-Template/issues">Request Feature</a>
+    <a href="https://github.com/AvishrantsSh/Social-Networking-Project/issues">Request Feature</a>
   </p>
 </p>
 <br>
 <p align="center">
-  <a href="https://github.com/AvishrantsSh/Django-Template/graphs/contributors">
-    <img alt="Contributors" src="https://img.shields.io/github/contributors/AvishrantsSh/Django-Template.svg?style=for-the-badge" style="max-width:100%;">
+  <a href="https://github.com/AvishrantsSh/Social-Networking-Project/graphs/contributors">
+    <img alt="Contributors" src="https://img.shields.io/github/contributors/AvishrantsSh/Social-Networking-Project.svg?style=for-the-badge" style="max-width:100%;">
   </a>
-  <a href="https://github.com/AvishrantsSh/Django-Template/network/members">
-    <img alt="Forks" src="https://img.shields.io/github/forks/AvishrantsSh/Django-Template.svg?style=for-the-badge" style="max-width:100%;">
+  <a href="https://github.com/AvishrantsSh/Social-Networking-Project/network/members">
+    <img alt="Forks" src="https://img.shields.io/github/forks/AvishrantsSh/Social-Networking-Project.svg?style=for-the-badge" style="max-width:100%;">
   </a>
-  <a  href="https://github.com/AvishrantsSh/Django-Template/stargazers">
-    <img alt="Stargazers" src="https://img.shields.io/github/stars/AvishrantsSh/Django-Template.svg?style=for-the-badge" style="max-width:100%;">
+  <a  href="https://github.com/AvishrantsSh/Social-Networking-Project/stargazers">
+    <img alt="Stargazers" src="https://img.shields.io/github/stars/AvishrantsSh/Social-Networking-Project.svg?style=for-the-badge" style="max-width:100%;">
   </a>
-  <a href="https://github.com/AvishrantsSh/Django-Template/issues">
-    <img alt="Issues" src="https://img.shields.io/github/issues/AvishrantsSh/Django-Template.svg?style=for-the-badge" style="max-width:100%;">
+  <a href="https://github.com/AvishrantsSh/Social-Networking-Project/issues">
+    <img alt="Issues" src="https://img.shields.io/github/issues/AvishrantsSh/Social-Networking-Project.svg?style=for-the-badge" style="max-width:100%;">
   </a>
-  <a href="https://github.com/AvishrantsSh/Django-Template/blob/main/LICENSE">
-    <img alt="MaIT License" src="https://img.shields.io/github/license/AvishrantsSh/Django-Template.svg?style=for-the-badge" style="max-width:100%;">
+  <a href="https://github.com/AvishrantsSh/Social-Networking-Project/blob/main/LICENSE">
+    <img alt="MaIT License" src="https://img.shields.io/github/license/AvishrantsSh/Social-Networking-Project.svg?style=for-the-badge" style="max-width:100%;">
   </a>
 </p>
 
@@ -49,7 +49,6 @@
   </li>
   <li><a href="#usage">Usage</a></li>
   <li><a href="#contributing">Contributing</a></li>
-  <li><a href="#license">License</a></li>
 </ol>
 
 
@@ -57,17 +56,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-Managing your Django project and all its dependencies can be a nightmare. This also includes managing dependencies in virtual environments, securing your `SECRET KEY`, adding files to `.gitignore`, running code style validations and what not.
-
-Why not simplify this tedious and repetetive work? 
-
-With this objective in mind, I created `Django Template`, a simple and minimalistic django project template that fits all your requirements. 
-
+Some kind of lorem ipsum
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-Simply click on [Use this template](https://github.com/AvishrantsSh/Django-Template/generate) button on top to get started. Go ahead and choose a cool name for your project. Clone the newly created repository and continue with the following steps.
 
 ### Prerequisites
 
@@ -140,18 +133,12 @@ You can use `make` commands to perform various operations on your django project
     ```
      _Note: Media files will not be deleted using this command_
 
-4. Update project requirements (useful for deployment)
-    ```sh
-    make freeze
-    ```
-   This command will add all your project dependencies to `etc/requirements.txt`, making it very easy for deployment.
-
-5. Running Django Testcases
+4. Running Django Testcases
     ```sh
     make test
     ```
 
-5. Check for proper formatting and import style using `black` and `isort`
+5. Check for proper formatting and import style using `autoflake`, `black` and `isort`
     ```sh
     make format
     ```
@@ -167,7 +154,3 @@ Contributions are what make the open source community such an amazing place to b
 4. Push to the Branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-<!-- LICENSE -->
-## License
-
-Distributed under the MIT License. See `LICENSE` for more information.

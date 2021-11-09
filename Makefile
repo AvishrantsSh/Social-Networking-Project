@@ -17,11 +17,15 @@ genkey: virtualenv
 	@echo "-> Generating Secret key"
 	@if test -f ${ENV_FILE}; then echo ".env file exists already"; true; fi
 	@mkdir -p $(shell dirname ${ENV_FILE}) && touch ${ENV_FILE}
-	@echo SECRET_KEY=\"${GET_SECRET_KEY}\" > ${ENV_FILE}
+	@echo SECRET_KEY=\"${GET_SECRET_KEY}\"\\nDEVELOPMENT=True > ${ENV_FILE}
 
 install: genkey
 	@echo "-> Installing Dependencies"
-	@${ACTIVATE} pip install -r etc/requirements.txt
+	@${ACTIVATE} pip install -r etc/dev.txt
+
+install_full: genkey
+	@echo "-> Installing Dependencies"
+	@${ACTIVATE} pip install -r requirements.txt
 
 project: install
 	@echo -n "-> Enter Project Name: ";\
@@ -36,9 +40,6 @@ migrate:
 run:
 	${MANAGE} runserver ${PORT}
 
-freeze:
-	@echo "-> Updating Project Requirements"
-	@${ACTIVATE} pip freeze > etc/requirements.txt
 
 flush:
 	@echo "-> Flushing Database"

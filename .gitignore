@@ -30,6 +30,9 @@ lib/
 lib64/
 lib64
 share/
+Scripts
+include
+
 
 # Sublime Text # 
 *.tmlanguage.cache 
