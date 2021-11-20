@@ -45,5 +45,19 @@ class Posts(models.Model):
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
     content = models.CharField(null=False, blank=False, max_length=200)
     timestamp = models.DateTimeField(auto_created=True)
-    likes = models.PositiveIntegerField()
-    shares = models.PositiveIntegerField()
+    upvote = models.PositiveIntegerField(default=0)
+
+
+class Follows(models.Model):
+    user_id = follower_id = models.ForeignKey(
+        Users, on_delete=models.CASCADE, related_name="f_user_id"
+    )
+    follows_id = models.ForeignKey(
+        Users, on_delete=models.CASCADE, related_name="follows_id"
+    )
+    
+class Upvotes(models.Model):
+    user_id = models.ForeignKey(
+        Users, on_delete=models.CASCADE, related_name="upvotes_user_id"
+    )
+    post_id = models.ForeignKey(Posts, on_delete=models.CASCADE)

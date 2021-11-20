@@ -1,7 +1,10 @@
-from django.shortcuts import render
+from django.shortcuts import redirect, render
+from django.urls import reverse
 
 from backend.queries import *
 from backend.utils import is_login, runquery
+from datetime import datetime
+from uuid import uuid4
 
 
 def HomeView(request):
@@ -21,4 +24,18 @@ def HomeView(request):
 
 
 def AddPostView(request):
-    return render(request, "add_post.html", {"is_login": is_login(request)})
+    template_name = "add_post.html"
+    user = is_login(request)
+    if not user:
+        return redirect(reverse("login"))
+
+    if request.method == "POST":
+        content = request.POST.get("content")
+        _, error = runquery(
+            CREATE_NEW_POST, [str(uuid4()), user, content, datetime.now()]
+        )
+        if error:
+            return render(request, template_name, {"error": str(error)})
+        return redirect(reverse("home"))
+
+    return render(request, template_name, {"is_login": is_login(request)})

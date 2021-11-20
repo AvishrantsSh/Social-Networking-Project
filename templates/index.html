@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
-{% block title %} Home Page {% endblock %}
+{% block title %} Home Page {% endblock title %}
 {% block content %}
-{% if is_login %}
-<h1>
-    You are currently logged in. Rest of the functionality is one its way
-</h1>
-{% else %}
-<h1>
-    Hi there!
-</h1>
-{% endif %}
-{% if posts %}
-    {% for i,j in posts %}
-        <h2>{{ i }}</h2>
-        <p>{{ j }}</p>
-    {% endfor %}
-{% endif %}
+<div class="container">
 
-{% if error %}
-<div class="alert alert-danger" role="alert">
-    {{error}}
+    <h1>
+        Home Page
+    </h1>
+    {% if posts %}
+    {% for i,j in posts %}
+    <h2>{{ i }}</h2>
+    <p>{{ j }}</p>
+    {% endfor %}
+    {% endif %}
+
+    {% if error %}
+    <div class="alert alert-danger" role="alert">
+        {{error}}
+    </div>
+    {% endif %}
 </div>
-{% endif %}
-{% endblock %}
+{% endblock content %}

@@ -1,7 +1,25 @@
 {% extends 'base.html' %}
 {% block title %} Create a Post {% endblock title %}
 {% block content %}
-<h2>
-    Work in Progress!!
-</h2>
+<div class="container">
+    <div class="container mx-auto w-50 mt-5">
+        <h2>
+            What do you want to talk about?
+        </h2>
+        <form method="POST" class="mt-2">
+            {% csrf_token %}
+            <div class="form-group my-3">
+                <label for="content">Express yourself </label>
+                <textarea class="form-control" id="content" name="content" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary my-3">Submit</button>
+        </form>
+    </div>
+</div>
+
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+{% endif %}
 {% endblock content %}

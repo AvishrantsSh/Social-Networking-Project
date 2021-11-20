@@ -43,6 +43,6 @@ def is_login(request):
             return False
         if error:
             raise (error)
-        return True
+        return result[0][0]
 
     return False
