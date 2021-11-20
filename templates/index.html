@@ -10,5 +10,16 @@
     Hi there!
 </h1>
 {% endif %}
-{{message}}
+{% if posts %}
+    {% for i,j in posts %}
+        <h2>{{ i }}</h2>
+        <p>{{ j }}</p>
+    {% endfor %}
+{% endif %}
+
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+{% endif %}
 {% endblock %}

@@ -11,7 +11,7 @@ GENDER_CHOICE = (
 
 class Users(models.Model):
     user_id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
-    user_email = models.EmailField(null=False, blank=False)
+    user_email = models.EmailField(null=False, blank=False, unique=True)
     password = models.CharField(null=False, blank=False, max_length=20)
     first_name = models.CharField(null=False, blank=False, max_length=25)
     last_name = models.CharField(null=True, blank=True, max_length=25)
@@ -44,5 +44,6 @@ class Posts(models.Model):
     post_id = models.UUIDField(default=uuid4, primary_key=True, editable=False)
     user_id = models.ForeignKey(Users, on_delete=models.CASCADE)
     content = models.CharField(null=False, blank=False, max_length=200)
+    timestamp = models.DateTimeField(auto_created=True)
     likes = models.PositiveIntegerField()
     shares = models.PositiveIntegerField()

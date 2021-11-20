@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %} Create a Post {% endblock title %}
+{% block title %} Login {% endblock title %}
 {% block content %}
 <div class="container">
     <div class="container mx-auto w-50 mt-5">
@@ -9,7 +9,7 @@
         <form method="POST" class="mt-2">
             {% csrf_token %}
             <div class="form-group my-3">
-                <label for="user_email">Email address</label>
+                <label for="user_email">Email Address</label>
                 <input type="email" class="form-control" id="user_email" aria-describedby="emailHelp" placeholder="Enter email"
                     name="user_email">
                 <small id="emailHelp" class="form-text text-muted">Your email address</small>
@@ -23,5 +23,9 @@
     </div>
 </div>
 
-{{error}}
+{% if error %}
+<div class="alert alert-danger" role="alert">
+    {{error}}
+</div>
+{% endif %}
 {% endblock content %}
